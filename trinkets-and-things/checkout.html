@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Trinkets and Things</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Trinkets & Things</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="cart-icon"><a href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="checkout-page">
+        <div class="container">
+            <div class="checkout-container">
+                <div class="checkout-form">
+                    <h1>Checkout</h1>
+                    <form id="order-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <h2>Payment Method</h2>
+                            <div class="payment-options">
+                                <div class="payment-option">
+                                    <input type="radio" id="upi" name="payment" value="UPI" checked>
+                                    <label for="upi">UPI Payment</label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="cash" name="payment" value="Cash">
+                                    <label for="cash">Cash on Delivery</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="upi-payment" id="upi-payment-section">
+                            <h3>Pay via UPI</h3>
+                            <p>Scan the QR code below to complete your payment</p>
+                            <div class="qr-code-container">
+                                <img src="images/qr-code.png" alt="GPay QR Code">
+                                <p>Or send to: jordanrodrigues021@oksbi</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="transaction-id">Transaction ID (Optional)</label>
+                                <input type="text" id="transaction-id" name="transaction-id" placeholder="If you have a transaction ID, please enter it here">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn place-order-btn">Place Order</button>
+                    </form>
+                </div>
+                <div class="order-summary">
+                    <h2>Your Order</h2>
+                    <div class="order-items" id="checkout-items">
+                        <!-- Order items will be loaded here -->
+                    </div>
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span id="checkout-subtotal">₹0.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Shipping</span>
+                            <span>Free</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>Total</span>
+                            <span id="checkout-total">₹0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Trinkets & Things</h3>
+                    <p>Bringing unique finds to unique minds since 2023.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> jordanrodrigues021@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 XXXXX XXXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Trinkets and Things. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/checkout.js"></script>
+</body>
+</html>
