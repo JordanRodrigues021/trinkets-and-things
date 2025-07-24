@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const errorElement = document.getElementById('login-error');
+            const submitBtn = loginForm.querySelector('button[type="submit"]');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+            errorElement.textContent = '';
             
             try {
                 const response = await fetch('/.netlify/functions/admin-auth', {
@@ -24,17 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem('adminLoggedIn', 'true');
                     window.location.href = 'index.html';
                 } else {
-                    errorElement.textContent = result.message || 'Login failed';
+                    errorElement.textContent = result.message || 'Invalid email or password';
                 }
             } catch (error) {
-                errorElement.textContent = 'An error occurred during login';
+                errorElement.textContent = 'Network error. Please try again.';
                 console.error('Login error:', error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Login';
             }
         });
-    }
-    
-    // Auto-redirect to login if not authenticated
-    if (!window.location.pathname.includes('login.html') && !localStorage.getItem('adminLoggedIn')) {
-        window.location.href = 'login.html';
     }
 });
