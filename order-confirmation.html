@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Trinkets and Things</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Trinkets & Things</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="cart-icon"><a href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="confirmation-page">
+        <div class="container">
+            <div class="confirmation-container">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1>Thank You for Your Order!</h1>
+                <p class="order-number">Order #<span id="order-id">12345</span></p>
+                
+                <div class="confirmation-details">
+                    <h2>What's Next?</h2>
+                    <div class="payment-instructions" id="payment-instructions">
+                        <!-- Payment instructions will be shown based on payment method -->
+                    </div>
+                    
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-items" id="confirmation-items">
+                            <!-- Order items will be shown here -->
+                        </div>
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <span id="confirmation-total">₹0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="customer-info">
+                        <h3>Customer Information</h3>
+                        <p><strong>Name:</strong> <span id="customer-name"></span></p>
+                        <p><strong>Email:</strong> <span id="customer-email"></span></p>
+                        <p><strong>Phone:</strong> <span id="customer-phone"></span></p>
+                    </div>
+                </div>
+                
+                <div class="confirmation-actions">
+                    <a href="products.html" class="btn">Continue Shopping</a>
+                    <a href="/" class="btn outline">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Trinkets & Things</h3>
+                    <p>Bringing unique finds to unique minds since 2023.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> jordanrodrigues021@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 XXXXX XXXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Trinkets and Things. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/checkout.js"></script>
+</body>
+</html>
