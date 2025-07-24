@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if user is logged in
     if (!localStorage.getItem('adminLoggedIn') && !window.location.pathname.includes('login.html')) {
         window.location.href = 'login.html';
+        return;
     }
     
     // Load dashboard stats
